@@ -6,7 +6,8 @@ Purpose -
 */
 
 public class AI {
-
+    public static boolean FIRST = false;
+    public static boolean PLAYS = false;
     public int getBoardScore() {
         System.out.println("AI CLASS LOADED");
         return 1;

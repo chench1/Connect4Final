@@ -16,11 +16,15 @@ public class ButtonClickedEvent implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         int clicked = Integer.parseInt(e.getActionCommand());
-        try {
-            logic.placeToken(clicked);
-        } catch (InvalidMoveException ex) {
-            System.out.println(ex.getMessage());
-            logic.setTurn(logic.getTurn() - 1);
+        if (AI.PLAYS) {
+
+        } else {
+            try {
+                logic.placeToken(clicked);
+            } catch (InvalidMoveException ex) {
+                System.out.println(ex.getMessage());
+                logic.setTurn(logic.getTurn() - 1);
+            }
         }
         logic.setTurn(logic.getTurn() + 1);
         System.out.println(logic.getTurn());
